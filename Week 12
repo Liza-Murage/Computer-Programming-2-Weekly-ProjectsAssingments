@@ -1,0 +1,26 @@
+#include "Person.h"
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+Person::Person(string id, string fName, string lName, string mail, string phone)
+    : personID(id), firstName(fName), lastName(lName), email(mail), phoneNumber(phone) {}
+
+Person::~Person() {}
+
+string Person::getPersonID() const { return personID; }
+string Person::getFirstName() const { return firstName; }
+string Person::getLastName() const { return lastName; }
+string Person::getFullName() const { return firstName + " " + lastName; }
+string Person::getEmail() const { return email; }
+string Person::getPhoneNumber() const { return phoneNumber; }
+
+void Person::setEmail(string mail) { email = mail; }
+void Person::setPhoneNumber(string phone) { phoneNumber = phone; }
+
+void Person::displayInfo() const {
+    cout << "ID: " << personID << endl;
+    cout << "Name: " << getFullName() << endl;
+    cout << "Email: " << email << endl;
+    cout << "Phone: " << phoneNumber << endl;
+}
